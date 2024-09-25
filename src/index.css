@@ -1,0 +1,304 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color:#d0e0f5;
+  color: #1a202c;
+}
+
+
+h1 {
+  font-size: 5.2em;
+  line-height: 1.1;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* Add this media query for larger screens */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
+
+/* General styles */
+.container {
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  /* height: 100vh; Changed from 50vh to 100vh */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero section */
+.hero {
+  background-color: #1a202c;
+  color: white;
+  padding: 20px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #cbd5e0;
+}
+
+.hero-content {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  padding: 200px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 20px; /* Added margin-bottom */
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #4299e1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #3182ce;
+}
+
+/* Main content */
+main {
+  padding: 40px 0;
+  flex: 1;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.file-input {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pdf-preview {
+  margin-bottom: 40px;
+}
+
+.pdf-embed {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+.extract-button,
+.show-more-button,
+.add-question-button,
+.save-button {
+  background-color: #48bb78;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.extract-button:hover,
+.show-more-button:hover,
+.add-question-button:hover,
+.save-button:hover {
+  background-color: #38a169;
+}
+
+.question-group {
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.question-input,
+.option-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+}
+
+.add-option-button,
+.delete-button,
+.delete-option-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4299e1;
+}
+
+.delete-button,
+.delete-option-button {
+  color: #e53e3e;
+}
+
+.option-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.show-more-button {
+  background-color: #718096;
+}
+
+.show-more-button:hover {
+  background-color: #4a5568;
+}
+
+.add-question-button {
+  background-color: #4299e1;
+}
+
+.add-question-button:hover {
+  background-color: #3182ce;
+}
+
+/* Tooltip Styles */
+.delete-button,
+.add-option-button,
+.delete-option-button {
+  position: relative;
+}
+
+.delete-button::after,
+.add-option-button::after,
+.delete-option-button::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.delete-button:hover::after,
+.add-option-button:hover::after,
+.delete-option-button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Adjust positioning for delete-option-button */
+.delete-option-button::after {
+  bottom: auto;
+  top: 100%;
+}
