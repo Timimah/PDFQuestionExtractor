@@ -102,7 +102,8 @@ h1 {
 .nav-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;;
+  align-items: center;
+  padding: 0 2em;
 }
 
 .logo {
@@ -134,7 +135,7 @@ h1 {
   text-align: center;
   flex: 1;
   display: flex;
-  padding: 200px 0;
+  padding: 100px 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
