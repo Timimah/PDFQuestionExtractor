@@ -218,9 +218,9 @@ h2 {
 
 /* Media queries for responsive design */
 @media (min-width: 768px) {
-  .container {
+  /* .container {
     padding: 0 2em;
-  }
+  } */
 
   .nav-links {
     display: flex;
@@ -228,7 +228,7 @@ h2 {
   }
 
   .hero-content h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .hero-content p {
@@ -249,9 +249,9 @@ h2 {
 }
 
 @media (min-width: 1024px) {
-  .container {
+  /* .container {
     padding: 0 4em;
-  }
+  } */
 
   .hero-content h1 {
     font-size: 4.5rem;
