@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); 
 
 * {
   font-family: "Raleway", Inter, system-ui, sans-serif;
@@ -26,20 +26,26 @@
   flex-direction: column;
 }
 
+@font-face {
+  font-family: "Raleway", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+}
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #d0e0f5;
+  background-color:#d0e0f5;
   color: #1a202c;
 }
 
+
 h1 {
-  font-size: 3.2em;
+  font-size: 5.2em;
   line-height: 1.1;
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -53,13 +59,30 @@ h1 {
     background-color: #f9f9f9;
   }
 }
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* Add this media query for larger screens */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
 
 /* General styles */
 .container {
   max-width: none;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 2em 2em 4em;
   position: -webkit-sticky;
   top: 0;
   border-bottom: 3px solid #73AD21;
@@ -81,11 +104,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  /* padding: em; */
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -93,23 +116,39 @@ h1 {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #cbd5e0;
+}
+
 .hero-content {
   text-align: center;
   flex: 1;
   display: flex;
-  padding: 50px 0;
+  padding: 100px 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 4.5rem;
+  margin-bottom: 20px; /* Added margin-bottom */
 }
 
 .hero-content p {
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-bottom: 20px;
 }
 
@@ -129,27 +168,27 @@ h1 {
 
 /* Main content */
 main {
-  padding: 20px 0;
+  padding: 40px 0;
   flex: 1;
 }
 
 h2 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .file-input {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .pdf-preview {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .pdf-embed {
   width: 100%;
-  height: 400px;
+  height: 600px;
   border: none;
 }
 
@@ -160,18 +199,24 @@ h2 {
   background-color: #48bb78;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 0.9rem;
+}
+
+.extract-button:hover,
+.show-more-button:hover,
+.add-question-button:hover,
+.save-button:hover {
+  background-color: #38a169;
 }
 
 .question-group {
   border: 1px solid #e2e8f0;
   border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .question-header {
@@ -179,17 +224,15 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  flex-wrap: wrap;
 }
 
 .question-input,
 .option-input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #e2e8f0;
   border-radius: 5px;
-  font-size: 0.9rem;
 }
 
 .add-option-button,
@@ -199,25 +242,25 @@ h2 {
   border: none;
   cursor: pointer;
   color: #4299e1;
-  font-size: 0.9rem;
+}
+
+.delete-button,
+.delete-option-button {
+  color: #e53e3e;
 }
 
 .option-group {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  flex-wrap: wrap;
 }
 
 .action-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  flex-wrap: wrap;
 }
-
-/* Media queries for responsive design */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 767px) {
   /* .container {
     padding: 0 2em;
   } */
@@ -248,21 +291,20 @@ h2 {
   }
 }
 
-@media (min-width: 1024px) {
-  /* .container {
-    padding: 0 4em;
-  } */
-
-  .hero-content h1 {
-    font-size: 4.5rem;
-  }
+.show-more-button {
+  background-color: #718096;
 }
 
-@media (min-width: 1920px) {
-  .container {
-    max-width: 1800px;
-    margin: 0 auto;
-  }
+.show-more-button:hover {
+  background-color: #4a5568;
+}
+
+.add-question-button {
+  background-color: #4299e1;
+}
+
+.add-question-button:hover {
+  background-color: #3182ce;
 }
 
 /* Tooltip Styles */
@@ -284,7 +326,7 @@ h2 {
   color: white;
   padding: 5px 10px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
@@ -298,6 +340,7 @@ h2 {
   visibility: visible;
 }
 
+/* Adjust positioning for delete-option-button */
 .delete-option-button::after {
   bottom: auto;
   top: 100%;
